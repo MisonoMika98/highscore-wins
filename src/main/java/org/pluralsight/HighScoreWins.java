@@ -23,12 +23,12 @@ public class HighScoreWins
         String[] scores = formatParts[1].split(":");
 
 
-        // assigns home and visitor team names
+        // assigns home and visitor team names to the teams array
         String homeTeam = teams[0];
         String visitorTeam = teams[1];
 
 
-        // converts team scores from strings into integers
+        // converts team scores from strings into integers and assigns them to the scores array
         int homeScore = Integer.parseInt(scores[0]);
         int visitorScore = Integer.parseInt(scores[1]);
 
