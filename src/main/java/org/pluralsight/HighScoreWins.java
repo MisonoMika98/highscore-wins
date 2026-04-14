@@ -1,17 +1,51 @@
 package org.pluralsight;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+import java.util.Scanner;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
+public class HighScoreWins
+{
+    static void main()
+    {
+
+        Scanner input = new Scanner(System.in);
+
+        // asks user for score in specific format
+        System.out.print("Please enter your game score in this format (i.e. Home:Visitor|21:9): ");
+        String finalScore = input.nextLine();
+
+        // splits formatting up into an array so it can be read
+        String[] formatParts = finalScore.split("\\|");
+        String[] teams = formatParts[0].split(":");
+        String[] scores = formatParts[1].split(":");
+
+        // assign team names and scores to the array
+        String homeTeam = teams[0];
+        String visitorTeam = teams[1];
+
+        int homeScore = Integer.parseInt(scores[0]);
+        int visitorScore = Integer.parseInt(scores[1]);
+
+        // checks for the winner of the match using booleans
+        if (homeScore > visitorScore)
+        {
+            System.out.println("Winner: " + homeTeam + " " + homeScore + ":" + visitorScore + " " + visitorTeam);
         }
+
+        else if (visitorScore > homeScore)
+        {
+            System.out.println("Winner: " + visitorTeam + " " + visitorScore + ":" + homeScore + " " + homeTeam);
+        }
+
+        else if (homeScore == visitorScore)
+        {
+            System.out.println("It's a tie!");
+        }
+
+        else
+        {
+            System.out.println("What are you cooking...");
+        }
+
     }
 }
+
