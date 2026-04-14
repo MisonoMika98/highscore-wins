@@ -25,7 +25,7 @@ public class HighScoreWins
         int homeScore = Integer.parseInt(scores[0]);
         int visitorScore = Integer.parseInt(scores[1]);
 
-        // checks for the winner of the match using booleans
+        // checks for the winner of the match using booleans and outputs results
         if (homeScore > visitorScore)
         {
             System.out.println("Winner: " + homeTeam + " " + homeScore + ":" + visitorScore + " " + visitorTeam);
