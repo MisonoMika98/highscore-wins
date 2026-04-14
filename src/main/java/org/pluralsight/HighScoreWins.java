@@ -13,18 +13,26 @@ public class HighScoreWins
         System.out.print("Please enter your game score in this format (i.e. Home:Visitor|21:9): ");
         String finalScore = input.nextLine();
 
-        // splits formatting up into an array so it can be read
+        // splits formatting up into array, for the example given in the user input it would give me "Home:Visitor" and "21:9"
         String[] formatParts = finalScore.split("\\|");
+
+        // splits team names at the ":"
         String[] teams = formatParts[0].split(":");
+
+        // splits scores at the ":"
         String[] scores = formatParts[1].split(":");
+
 
         // assigns home and visitor team names
         String homeTeam = teams[0];
         String visitorTeam = teams[1];
 
+
         // converts team scores from strings into integers
         int homeScore = Integer.parseInt(scores[0]);
         int visitorScore = Integer.parseInt(scores[1]);
+
+
 
         // checks for the winner of the match using booleans and outputs results
         if (homeScore > visitorScore)
